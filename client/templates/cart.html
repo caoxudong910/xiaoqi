@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/cart.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #ccc;
+        }
+        #top{
+            width: 100%;
+            height: 80px;
+            background-color: #666;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+        }
+        #nav{
+            height: 80px;
+            width: 1140px;
+            position: fixed;
+            left: 50%;
+            margin-left: -570px;
+            overflow: hidden;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            float: left;
+            overflow: hidden;
+            margin-left: 80px;
+        }
+        #title{
+            color:#fff;
+            float: left;
+            font-size: 32px;
+            line-height: 80px;
+        }
+        #gwc{
+            color:#fff;
+            float: left;
+            font-size: 13px;
+            margin-top: 55px;
+            margin-left: 55px;
+        }
+        ul>li{
+            float: left;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        .aa{
+            color: #fff;
+            text-decoration: none;
+        }
+        .aa:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        #a1{
+            float: right;
+            margin-top: 30px;
+            margin-right: 28px;
+        }
+        #a1 span a{
+            margin-left: 20px;
+        }
+
+
+        #mid{
+            width: 1140px;
+            margin: 0 auto;
+            margin-top: 95px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        #mid_top{
+            width: 1138px;
+            height:50px;
+            border: solid 1px orange;
+            margin-top: 10px;
+        }
+        #gth{
+            float: left;
+            width: 25px;
+            height: 25px;
+            margin-top: 12px;
+            margin-left: 25px;
+        }
+        #mid_top_1{
+            color: orange;
+            font-size: 15px;
+            line-height: 50px;
+            margin-left: 20px;
+        }
+        #mid_top_2{
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            color: white;
+            background-color: red;
+            width: 75px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            margin-left: 20px;
+            border-radius: 5px;
+        }
+        #goods{
+            width: 1140px;
+            height: 50px;
+            margin-left: 15px;
+        }
+        #goods>span{
+            line-height: 50px;
+        }
+        #mid_mid{
+            width: 1138px;
+            height: 40px;
+            background-color: #f3f3f3;
+            border: solid 1px #e9e9e9;
+        }
+        #mid_mid>input{
+            float: left;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        #mid_mid>span{
+            float: left;
+            margin-right: 145px;
+            line-height: 40px;
+        }
+        .mid_bottom{
+            width: 1140px;
+            height: 150px;
+        }
+        .mid_bottom>input{
+            float: left;
+            margin-top:30px;
+            margin-left: 30px;
+            margin-right: 10px;
+        }
+        .mid_bottom>img{
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-top: 25px;
+        }
+        .add,.num,.reduce{
+            border: 0;
+        }
+        .add{
+            border-top: solid 1px #cacbcb;
+            border-left: solid 1px #cacbcb;
+            border-bottom: solid 1px #cacbcb;
+            width: 25px;
+            height: 25px;
+        }
+        .num{
+            border: solid 1px #cacbcb;
+            width: 50px;
+            height: 21px;
+            text-align: center;
+        }
+        .reduce{
+            border-top: solid 1px #cacbcb;
+            border-right: solid 1px #cacbcb;
+            border-bottom: solid 1px #cacbcb;
+            width: 25px;
+            height: 25px;
+        }
+        .mid_bottom>span{
+            line-height: 150px;
+        }
+        .sp1{
+            position: absolute;
+            margin-left: 40px;
+        }
+        .sp2{
+            position: absolute;
+            margin-left: 235px;
+        }
+        .sp3{
+            position: absolute;
+            margin-left: 400px;
+        }
+        .sp4{
+            position: absolute;
+            margin-left: 600px;
+        }
+        .sp5{
+            position: absolute;
+            margin-left: 793px;
+            color: #666;
+            text-decoration: none;
+            line-height: 150px;
+        }
+        .sp5:hover{
+            color: red;
+        }
+        #mid_bot{
+            width: 1138px;
+            height: 50px;
+            border: #d2d0d0 solid 1px;
+        }
+        #mid_bot>input{
+            float: left;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+        #delete{
+            margin-left: 15px;
+            text-decoration: none;
+            color: #666;
+        }
+        #delete:hover{
+            color: red;
+        }
+        #clear{
+            margin-left: 15px;
+            text-decoration: none;
+            color: #666;
+        }
+        #clear:hover{
+            color: red;
+        }
+        #total{
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            color: white;
+            background-color: red;
+            width: 85px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 20px;
+        }
+        #total:hover{
+            color: #666;
+        }
+        #total_num{
+            margin-left: 400px;
+            color: #666;
+        }
+        #total_price{
+            margin-left: 15px;
+            color: #666;
+        }
+        #empty{
+            width: 1140px;
+            height: 300px;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 40px;
+            line-height: 300px;
+        }
+
+
+
+
+        #bottom{
+            width: 100%;
+            height: 80px;
+            background-color: #666;
+        }
+        #bot{
+            width: 200px;
+            margin: 0 auto;
+            line-height: 80px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

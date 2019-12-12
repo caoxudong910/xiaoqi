@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情页</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #ccc;
+        }
+        #top{
+            z-index: 10;
+            width: 100%;
+            height: 80px;
+            background-color: #666;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #nav{
+            height: 80px;
+            width: 1140px;
+            position: fixed;
+            left: 50%;
+            margin-left: -570px;
+            overflow: hidden;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            float: left;
+            overflow: hidden;
+            margin-left: 80px;
+        }
+        #title{
+            color:#fff;
+            float: left;
+            font-size: 32px;
+            line-height: 80px;
+        }
+        #gwc{
+            color:#fff;
+            float: left;
+            font-size: 13px;
+            margin-top: 55px;
+            margin-left: 55px;
+        }
+        ul>li{
+            float: left;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        .aa{
+            color: #fff;
+            text-decoration: none;
+        }
+        .aa:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        #a1{
+            float: right;
+            margin-top: 30px;
+            margin-right: 28px;
+        }
+        #a1 span a{
+            margin-left: 20px;
+        }
+
+
+        #mid{
+            margin: 0 auto;
+            margin-top: 90px;
+            margin-bottom: 10px;
+            width: 1140px;
+            background-color:lavender;
+        }
+        #mid_t{
+            width: 1140px;
+            height: 500px;
+        }
+        #img{
+            float: left;
+            width: 270px;
+            height: 270px;
+            margin-top: 100px;
+            margin-left: 55px;
+        }
+        #mid_top{
+            float: left;
+            width: 700px;
+            margin-top: 80px;
+            margin-left: 50px;
+        }
+        #miaoshu1{
+            float: left;
+            width:300px ;
+        }
+        #miaoshu2{
+            float: left;
+            width:400px ;
+        }
+        #miaoshu3{
+            width:700px ;
+        }
+        #miaoshu3>p{
+            float: left;
+        }
+        #miaoshu3>span{
+            display:inline-block;
+            width: 617px;
+            margin-top: 16px;
+            margin-bottom: 10px;
+        }
+        #cart{
+            width: 160px;
+            height: 45px;
+            background-color:slategray;
+            float: left;
+            margin-top: -45px;
+            margin-left: 395px;
+        }
+        #cart>p{
+            font-size: 20px;
+            color: white;
+            line-height: 5px;
+            text-align: center;
+        }
+        #mid_bottom{
+            width: 1050px;
+            margin: 0 auto;
+            border: solid 1px black;
+            border-radius: 9px;
+        }
+        #m_t{
+            text-align: center;
+            font-size: 20px;
+            margin: 9px;
+        }
+        #m_b{
+            margin-left: 10px;
+        }
+        .father{
+            width: 1000px;
+            height: 100px;
+        }
+        .father>img{
+            float: left;
+            width: 70px;
+            height: 70px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 50px;
+        }
+        .f_div{
+            float: left;
+            margin-left: 20px;
+        }
+        .clear { clear: both; }
+
+        .son{
+            width: 900px;
+            height: 100px;
+            margin-left: 100px;
+        }
+        .son>img{
+            float: left;
+            width: 70px;
+            height: 70px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 50px;
+        }
+        .s_div{
+            float: left;
+            margin-left: 20px;
+        }
+        #editor{
+            z-index: 1;
+            width: 800px;
+            height: 330px;
+            background-color: white;
+            margin-left: 10px;
+        }
+        #btn{
+            width: 70px;
+            height: 35px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 50px;
+        }
+
+
+        
+        #bottom{
+            width: 100%;
+            height: 80px;
+            background-color: #666;
+        }
+        #bot{
+            width: 200px;
+            margin: 0 auto;
+            line-height: 80px;
+            text-align: center;
+        }
+    </style>
+
+    <link href="/static/css/xcConfirm.css" rel="stylesheet">
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/wangEditor.js"></script>
+    <script src="/static/js/xcConfirm.js"></script>
+    <script src="/static/js/info.js"></script>
+    <script src="/static/js/jquery.params.js"></script>
+
+</head>
+<body>
+
+<!--    <div id="top">-->
+<!--        <div id="nav">-->
+<!--            <div id="title">-->
+<!--                <b>小柒优品</b>-->
+<!--            </div>-->
+<!--            <ul>-->
+<!--                <li><a class="aa" href="/index">网站首页</a></li>-->
+<!--                <li><a class="aa" href="/snacks">零食</a></li>-->
+<!--                <li><a class="aa" href="#">数码</a></li>-->
+<!--                <li><a class="aa" href="#">服饰</a></li>-->
+<!--                <li><a class="aa" href="#">图书</a></li>-->
+<!--                <li><a class="aa" href="#">服装</a></li>-->
+<!--                <li><a class="aa" href="#">运动</a></li>-->
+<!--                <li><a class="aa" href="#">个人中心</a></li>-->
+<!--            </ul>-->
+<!--            <div id="gwc">-->
+<!--                <a class="aa" href="#">我的购物车</a>-->
+<!--            </div>-->
+<!--            <div id="a1">-->
+<!--                <span><a class="aa" href="/login">登录</a></span>-->
+<!--                <span><a class="aa" href="/register">注册</a></span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div id="mid">-->
+<!--        <div id="mid_t">-->
+<!--            <img  id="img" src="../static/images/1.png">-->
+<!--            <div id="mid_top">-->
+<!--                <h2>三只孙鼠辣条1</h2>-->
+<!--                <div id="miaoshu1">-->
+<!--                    <p>小柒价：￥200元</p>-->
+<!--                    <p>厂商：三只孙鼠旗舰店</p>-->
+<!--                </div>-->
+<!--                <div id="miaoshu2">-->
+<!--                    <p>库存：10000件</p>-->
+<!--                    <p>售出数量：200件</p>-->
+<!--                </div>-->
+<!--                <div id="miaoshu3">-->
+<!--                    <p>描述：</p><span>荷兰豆，保龄豆，玉米花，烧贝壳，铜锣烧，瑞士莲，蛋黄派，卷卷芯，喜之郎.挤挤沙发，果冻薯片爆米花水果糖棒棒糖果脯、蜜饯话梅、话李干脆面饼干泡泡糖、口香糖膨化小食品葵花花生核桃奶糖芝麻糊奶酪固齿葡萄干薄荷糖无花果南瓜子和开心果柑桔。</span>-->
+<!--                </div>-->
+<!--                <p>温馨提示 · 支持7天无理由退货(拆封后不支持)</p>-->
+<!--                <div id="cart" onclick="cart()">-->
+<!--                    <p><b>加入购物车</b></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div id="mid_bottom">-->
+<!--            <p id="m_t">商&nbsp&nbsp&nbsp品&nbsp&nbsp&nbsp评&nbsp&nbsp&nbsp论</p>-->
+<!--            <hr>-->
+
+<!--            <div id="m_b">-->
+<!--                <h3>到现在共有 <span style="color: red;">0</span> 条评论</h3>-->
+<!--                <div class="father">-->
+<!--                    <img src="../static/images/cart.png">-->
+<!--                    <div class="f_div">-->
+<!--                        <h3>曹旭东 <span>2019-09-10 20:20:20 </span><a href="#">回复</a></h3>-->
+<!--                        <p>这件商品特别好吃，大家快快来购买！！！</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="son">-->
+<!--                        <img src="../static/images/cart.png">-->
+<!--                        <div class="s_div">-->
+<!--                            <h3>曹旭东 <span>2019-09-10 20:20:20 </span><a href="#">回复</a></h3>-->
+<!--                            <p>这件商品特别好吃，大家快快来购买！！！</p>-->
+<!--                        </div>-->
+<!--                </div>-->
+<!--            </div>  -->
+<!--            -->
+<!--            <hr>-->
+<!--            <div id="editor"><p id="e_p">请在此输入您的评价</p></div>-->
+<!--            <button id="btn">提交</button>-->
+<!--        </div>-->
+<!--        -->
+<!--    </div>-->
+<!--    -->
+<!--    <div id="bottom">-->
+<!--        <p id="bot">@版权归小柒优品所有</p>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        function cart(){-->
+<!--            alert('添加购物车成功！')-->
+<!--        }-->
+
+<!--        var E = window.wangEditor;-->
+<!--        var editor = new E('#editor');-->
+<!--        editor.create();-->
+<!--        -->
+<!--        $('#editor').click(function(){-->
+<!--            $('#e_p').css('display','none');-->
+<!--        });-->
+
+<!--        //绑定提交按钮的单击事件-->
+<!--        $('#btn').on('click', function(){-->
+<!--                    var content = editor.txt.html();-->
+<!--                    var post_data = {'content': content};-->
+<!--                    $.ajax({-->
+<!--                    // 请求方式-->
+<!--                    type:"post",-->
+<!--                    // contentType -->
+<!--                    contentType:"application/json;charset=utf-8",-->
+<!--                    // dataType-->
+<!--                    dataType:"json",-->
+<!--                    // url-->
+<!--                    url:"http://127.0.0.1:8000/v1/messages/" + t_id ,-->
+<!--                    // 把JS的对象或数组序列化一个json 字符串-->
+<!--                    data:JSON.stringify(post_data),-->
+<!--                    // result 为请求的返回结果对象-->
+<!--                    beforeSend: function(request) {-->
+<!--                      request.setRequestHeader("Authorization", token);-->
+<!--                    },-->
+<!--                    success:function (result) {-->
+<!--                        if (200 == result.code){-->
+<!--                            alert("发布成功")-->
+<!--                            window.location.reload()-->
+<!--                        }else{-->
+<!--                            alert(result.error)-->
+<!--                            window.location.href = '/login'-->
+<!--                        }-->
+<!--                     }-->
+<!--                })-->
+<!--            });-->
+<!--    </script>-->
+
+</body>
+</html>
